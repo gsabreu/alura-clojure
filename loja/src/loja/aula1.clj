@@ -30,16 +30,19 @@
 
 ;(meu-mapa println ["daniela" "guilherme" "carlos" "paulo" "lucia" "ana"])
 
-
+; recur só pode ser usado no "final"".. TAIL RECURSION
 (defn meu-mapa
   [funcao sequencia]
   (let [primeiro (first sequencia)]
-    (if (primeiro first)
+    (if (not (nil? primeiro))
       (do
         (funcao primeiro)
-        (meu-mapa funcao (rest sequencia))))))
+        (recur funcao (rest sequencia))))))
 
-(meu-mapa println ["daniela" "guilherme" "carlos" "paulo" "lucia" "ana"])
+; recur só pode ser usado no "final"".. TAIL RECURSION
 
+;(meu-mapa println ["daniela" "guilherme" "carlos" "paulo" "lucia" "ana"])
+;(meu-mapa println ["daniela" false "guilherme" "carlos" "paulo" "lucia" "ana"])
+;
+(meu-mapa println (range 1000))
 
-(meu-mapa println ["daniela" false "guilherme" "carlos" "paulo" "lucia" "ana"])
