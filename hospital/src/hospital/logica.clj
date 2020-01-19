@@ -41,3 +41,17 @@
   )
 
 
+(defn proxima [hospital departamento]
+  "Retorna o proximo paciente da fila"
+  (-> hospital
+      departamento
+      peek))
+
+(defn transfere
+  "Transfe o proximo paciente da fila de para a fila para"
+  [hospital de para]
+  (let [pessoa (proxima hospital de)]
+    (-> hospital
+        (atende de)
+        (chega-em para pessoa))))
+
