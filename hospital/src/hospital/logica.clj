@@ -55,19 +55,19 @@
         (atende de)
         (chega-em para pessoa))))
 
-(defn atende-completo
-  "Somente demonstração para dois retornos (quem e onde)"
-  [hospital departamento]
-  {
-   :paciente (update hospital departamento peek)
-   :hospital (update hospital departamento pop)})
-
-(defn atende-completo-que-chama-ambos
-  "Somente demonstração para dois retornos (quem e onde)"
-  [hospital departamento]
-  (let [fila (get hospital departamento)
-        peek-pop (juxt peek pop)
-        [pessoa fila] (peek-pop fila)
-        hospital-atualizado (update hospital assoc departamento fila-atualizada)]
-    {:paciente pessoa
-     :hospital hospital-atualizado}))
+;(defn atende-completo
+;  "Somente demonstração para dois retornos (quem e onde)"
+;  [hospital departamento]
+;  {
+;   :paciente (update hospital departamento peek)
+;   :hospital (update hospital departamento pop)})
+;
+;(defn atende-completo-que-chama-ambos
+;  "Somente demonstração para dois retornos (quem e onde)"
+;  [hospital departamento]
+;  (let [fila (get hospital departamento)
+;        peek-pop (juxt peek pop)
+;        [pessoa fila] (peek-pop fila)
+;        hospital-atualizado (update hospital assoc departamento fila-atualizada)]
+;    {:paciente pessoa
+;     :hospital hospital-atualizado}))
