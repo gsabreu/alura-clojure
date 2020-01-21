@@ -20,6 +20,9 @@
     (chega-em! hospital "Guilherme")
     (pprint hospital)
     (transfere! hospital :espera :laboratorio1)
+    (transfere! hospital :espera :laboratorio2)
+    (transfere! hospital :espera :laboratorio1)
+    (transfere! hospital :espera :laboratorio1)
     (pprint hospital)
     ))
 
