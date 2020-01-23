@@ -19,4 +19,30 @@
     (pprint (adiciona-paciente pacientes paulo))
     ))
 
-(testa-uso-de-pacientes)
+;(testa-uso-de-
+
+(defrecord Paciente [id nome nascimento])
+
+(println (->Paciente 15 "Guilherme" "28/07/1995"))
+(pprint (->Paciente 15 "Guilherme" "28/07/1995"))
+
+(pprint (Paciente. 15 "Guilherme" "28/07/1995"))
+
+(pprint(map->Paciente {:id 15, :nome "Guilherme", :nascimento "28/07/1995"}))
+
+
+(let [guilherme (->Paciente 15 "Guilherme" "28/07/1995")]
+  (println (:id guilherme))
+  (println (vals guilherme)))
+
+(pprint(map->Paciente {:id 15, :nome "Guilherme", :nascimento "28/07/1995" :rg 480337934}))
+(pprint(map->Paciente {:id nil, :nome "Guilherme", :nascimento "28/07/1995" :rg 480337934}))
+(pprint (.nome guilherme))
+
+
+(pprint (assoc (Paciente. nil "Guilherme" "28/07/1995") :id 38))
+(pprint (class (assoc (Paciente. nil "Guilherme" "28/07/1995") :id 38)))
+
+
+(pprint (= (->Paciente 15 "Guilherme" "28/07/1995") (->Paciente 15 "Guilherme" "28/07/1995")))
+
